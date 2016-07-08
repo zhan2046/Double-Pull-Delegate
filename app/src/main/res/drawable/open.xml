@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@drawable/arrowgradient1_up"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/arrowgradient2_up"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/arrowgradient3_up"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/arrowgradient4_up"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/arrowgradient5_up"
+        android:duration="200" />
+
+</animation-list>
