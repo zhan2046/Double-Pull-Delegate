@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhan.doublepull.widget.OutScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.zhan.doublepull.widget.HeaderFrameLayout
+            android:id="@+id/main_header"
+            android:layout_width="match_parent"
+            android:layout_height="275dp">
+
+            <ImageView
+                android:id="@+id/main_header_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/header2" />
+
+            <ImageView
+                android:id="@+id/main_header_mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/bk_vediomask_bottom" />
+        </com.zhan.doublepull.widget.HeaderFrameLayout>
+
+
+        <com.zhan.doublepull.widget.PullRelativeLayout
+            android:id="@+id/main_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp">
+
+            <RelativeLayout
+                android:id="@+id/main_content"
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:layout_marginTop="75dp">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="#bb000000"
+                    android:textSize="20sp"
+                    android:text="This is UP"
+                    android:layout_marginTop="120dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="#bb000000"
+                    android:textSize="20sp"
+                    android:text="This is CENTER"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="#bb000000"
+                    android:textSize="20sp"
+                    android:text="This is BOTTOM"
+                    android:layout_marginBottom="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/main_haibao"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/haibao2" />
+
+            <LinearLayout
+                android:id="@+id/main_info"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_toRightOf="@id/main_haibao"
+                android:orientation="vertical"
+                android:paddingLeft="20dp">
+
+                <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="14dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rating_bigger_select" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="14dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rating_bigger_select" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="14dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rating_bigger_select" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="14dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rating_bigger_select" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="14dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rating_bigger_select" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="9.9"
+                        android:textColor="#ff5021"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="星球大战之原力觉醒"
+                    android:textColor="@android:color/white"
+                    android:textSize="21sp" />
+            </LinearLayout>
+        </com.zhan.doublepull.widget.PullRelativeLayout>
+    </RelativeLayout>
+</com.zhan.doublepull.widget.OutScrollView>
