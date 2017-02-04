@@ -12,6 +12,7 @@ Screenshots
 
 Double-Pull-Delegate use **Scroller** and **Delegate** let **everything layout scroll**.
 
+[![](https://jitpack.io/v/ruzhan123/Double-Pull-Delegate.svg)](https://jitpack.io/#ruzhan123/Double-Pull-Delegate)
 
 Gradle
 ------
@@ -41,7 +42,7 @@ Add the dependency:
 
 
 Usage
-===============
+------
 
 ```xml
 
@@ -80,7 +81,7 @@ Usage
 		
 ```
 with java code
-===============
+------
 
 ```java
 
@@ -92,7 +93,7 @@ with java code
 ```
 
 Delegate
-===============
+------
 
  <ul>
    	<li><a href='javascript:'>ScrollerDelegate</a></li>
@@ -102,7 +103,7 @@ Delegate
  </ul>
 
 Implementing View
-===============
+------
 
  <ul>
    	<li><a href='javascript:'>HeaderRelativeLayout</a></li>
@@ -115,7 +116,7 @@ Implementing View
  </ul>
 
 Custom
-===============
+------
 
 ```java
 
