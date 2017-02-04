@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhan.doublepull.widget.OutScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<zhan.library.widget.PullScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.zhan.doublepull.widget.HeaderFrameLayout
+        <zhan.library.widget.HeaderRelativeLayout
             android:id="@+id/main_header"
             android:layout_width="match_parent"
             android:layout_height="275dp">
@@ -26,10 +26,10 @@
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
                 android:src="@drawable/bk_vediomask_bottom" />
-        </com.zhan.doublepull.widget.HeaderFrameLayout>
+        </zhan.library.widget.HeaderRelativeLayout>
 
 
-        <com.zhan.doublepull.widget.PullRelativeLayout
+        <zhan.library.widget.BodyRelativeLayout
             android:id="@+id/main_body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -145,6 +145,6 @@
                     android:textColor="@android:color/white"
                     android:textSize="21sp" />
             </LinearLayout>
-        </com.zhan.doublepull.widget.PullRelativeLayout>
+        </zhan.library.widget.BodyRelativeLayout>
     </RelativeLayout>
-</com.zhan.doublepull.widget.OutScrollView>
+</zhan.library.widget.PullScrollView>
