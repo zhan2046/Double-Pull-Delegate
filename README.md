@@ -1,53 +1,194 @@
 
-<!--lang: java-->
-####模仿的效果图：
+Double-Pull-Delegate
+===============
+
+A grace double layout pull delegate for Android, use Delegate class help layout scroll.
+
+Screenshots
+===============
 
 ![](https://github.com/ruzhan123/DoublePull/raw/master/gif/copy_gwl.gif)
 
-</br>
+
+Double-Pull-Delegate use **Scroller** and **Delegate** let **everything layout scroll**.
 
 
-####格瓦拉实际效果图：
+Gradle
+------
 
-![](https://github.com/ruzhan123/DoublePull/raw/master/gif/gwl.gif)
-
-</br>
-
+Add it in your root build.gradle at the end of repositories:
 
 
-这是一个比较复杂的控件
+```java
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+Add the dependency:
 
 
-我的博客：[详解](https://ruzhan123.github.io/2016/07/09/2016-07-09-03-%E4%BB%BF%E6%A0%BC%E7%93%A6%E6%8B%89%E5%8F%8C%E5%B1%82%E6%8B%96%E6%8B%BD%E5%B8%83%E5%B1%80%EF%BC%8C%E6%A0%BC%E7%93%A6%E6%8B%89%E7%94%B5%E5%BD%B1%E8%AF%A6%E6%83%85%E7%95%8C%E9%9D%A2/)
+```java
+
+	dependencies {
+	        compile 'com.github.ruzhan123:Double-Pull-Delegate:v1.0'
+	}
+```
 
 
-####简单分析：
+Usage
+===============
 
-1. 根部局使用了RelativeLayout，有两个子布局：外层布局与内层布局。
-2. 外层布局。根布局为自定义ScrollView，有两子布局：HeaderFrameLayout与PullRelativeLayout
-3. 内层布局。根部局为RelativeLayout，有两子布局：RecyclerView与ImageButton
+```xml
+
+	<zhan.library.widget.PullScrollView 
+		xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/main_root"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+	
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content">
+	
+	        <zhan.library.widget.HeaderRelativeLayout
+	            android:id="@+id/main_header"
+	            android:layout_width="match_parent"
+	            android:layout_height="275dp">
+	
+			...
+
+			</zhan.library.widget.HeaderRelativeLayout>
+	
+
+	        <zhan.library.widget.BodyRelativeLayout
+	            android:id="@+id/main_body"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="200dp">
+	
+			...
+	
+			 </zhan.library.widget.BodyRelativeLayout>
+	    </RelativeLayout>
+	</zhan.library.widget.PullScrollView>
+
+		
+```
+with java code
+===============
+
+```java
+
+    mHeaderRelativeLayout.scrollShow();
+
+    mBodyRelativeLayout.open();
+    mBodyRelativeLayout.hide(100);
+
+```
+
+Delegate
+===============
+
+ <ul>
+   	<li><a href='javascript:'>ScrollerDelegate</a></li>
+   	<li><a href='javascript:'>ScrollHeaderDelegate</a></li>
+	<li><a href='javascript:'>ScrollBodyDelegate</a></li>
+	<li><a href='javascript:'>ScrollViewDelegate</a></li>
+ </ul>
+
+Implementing View
+===============
+
+ <ul>
+   	<li><a href='javascript:'>HeaderRelativeLayout</a></li>
+   	<li><a href='javascript:'>HeaderFrameLayout</a></li>
+	<li><a href='javascript:'>HeaderLinearLayout</a></li>
+	<li><a href='javascript:'>BodyRelativeLayout</a></li>
+	<li><a href='javascript:'>BodyFrameLayout</a></li>
+	<li><a href='javascript:'>BodyLinearLayout</a></li>
+	<li><a href='javascript:'>PullScrollView</a></li>
+ </ul>
+
+Custom
+===============
+
+```java
+
+	public class HeaderRelativeLayout extends RelativeLayout {
+	
+	    private ScrollHeaderDelegate mScrollHeaderDelegate;
+	
+	    public HeaderRelativeLayout(Context context) {
+	        super(context);
+	        init();
+	    }
+	
+	    public HeaderRelativeLayout(Context context, AttributeSet attrs) {
+	        super(context, attrs);
+	        init();
+	    }
+	
+	    public HeaderRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+	        super(context, attrs, defStyleAttr);
+	        init();
+	    }
+	
+	    private void init() {
+	        mScrollHeaderDelegate = new ScrollHeaderDelegate(this);
+	    }
+	
+	    @Override
+	    public void computeScroll() {
+	        mScrollHeaderDelegate.computeScroll();
+	    }
+	
+	
+	    public void setScrollShow(boolean isScrollShow) {
+	        mScrollHeaderDelegate.setScrollShow(isScrollShow);
+	    }
+	
+	    public boolean isScrollShow() {
+	        return mScrollHeaderDelegate.isScrollShow();
+	    }
+	
+	    public void scrollShow() {
+	        mScrollHeaderDelegate.scrollShow();
+	    }
+	
+	    public void setDuration(int duration) {
+	        mScrollHeaderDelegate.setDuration(duration);
+	    }
+	}
+
+	...
+```
 
 
-外层布局如图：
+Developed by
+-------
 
-![](https://github.com/ruzhan123/DoublePull/raw/master/gif/out.png)
+ ruzhan - <a href='javascript:'>ruzhan333@gmail.com</a>
 
 
-内层布局如图：
+License
+-------
 
-![](https://github.com/ruzhan123/DoublePull/raw/master/gif/in.png)
+    Copyright 2017 ruzhan
 
----
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-####实现难点：
+        http://www.apache.org/licenses/LICENSE-2.0
 
-1.  初始化，事件由ScrollView处理和消耗。当滚动到顶部，若继续往下滑动，事件由子View PullRelativeLayout处理和消耗
-2.  若PullRelativeLayout处理和消耗事件，拖拽距离过小，移动到原来位置。反之，则向下滑动隐藏布局
-3.  HeaderFrameLayout随着PullRelativeLayout的变化而变化。隐藏则一起隐藏，打开则一起打开
-4. PullRelativeLayout隐藏后，ScrollView将不能处理和消耗事件，事件应由RecyclerView处理和消耗
-5. RecyclerView头布局滚动高度超过，头的70%，PullRelativeLayout做动画。HeaderFrameLayout做打开动画
-6. HeaderFrameLayout自定义View内部需要有打开功能，可使用Scroller来完成
-7.  PullRelativeLayout自定义View内部需要有打开和隐藏功能，可使用Scroller来完成
-8. View的滑动也可使用动画的形式，但是由于需要设置一些Visibility属性，这里就使用Scroller来完成滑动
-9. 自定义View之间的状态获取和数据交互，使用了对外提供回调接口的形式和对象直接注入的形式
-10. 调试布局效果会花掉一些时间
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+	
