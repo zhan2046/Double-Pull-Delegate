@@ -2,7 +2,7 @@
 Double-Pull-Delegate
 ===============
 
-A grace double layout pull delegate for Android, use Delegate class help layout scroll.
+A grace double layout pull delegate for Android
 
 Screenshots
 ===============
@@ -10,7 +10,7 @@ Screenshots
 ![](https://github.com/ruzhan123/DoublePull/raw/master/gif/copy_gwl.gif)
 
 
-Double-Pull-Delegate use **Scroller** and **Delegate** let **everything layout scroll**.
+Double-Pull-Delegate use **Scroller** and **Delegate**
 
 [![](https://jitpack.io/v/ruzhan123/Double-Pull-Delegate.svg)](https://jitpack.io/#ruzhan123/Double-Pull-Delegate)
 
@@ -79,17 +79,6 @@ Usage
 	</zhan.library.widget.PullScrollView>
 
 		
-```
-with java code
-------
-
-```java
-
-    mHeaderRelativeLayout.scrollShow();
-
-    mBodyRelativeLayout.open();
-    mBodyRelativeLayout.hide(100);
-
 ```
 
 Delegate
