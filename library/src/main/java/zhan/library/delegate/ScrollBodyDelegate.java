@@ -5,9 +5,7 @@ import android.view.View;
 import zhan.library.ScrollState;
 import zhan.library.listener.OnStateChangeListener;
 
-/**
- * Created by zhan on 2017/2/4.
- */
+
 
 public class ScrollBodyDelegate extends ScrollerDelegate {
 

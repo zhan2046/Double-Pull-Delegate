@@ -5,9 +5,7 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import zhan.library.delegate.ScrollHeaderDelegate;
 
-/**
- * Created by hrz on 2016/7/8.
- */
+
 public class HeaderLinearLayout extends LinearLayout {
 
     private ScrollHeaderDelegate mScrollHeaderDelegate;

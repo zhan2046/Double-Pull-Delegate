@@ -3,9 +3,6 @@ package zhan.library.delegate;
 import android.view.View;
 import android.widget.Scroller;
 
-/**
- * Created by zhan on 2017/2/4.
- */
 
 public class ScrollerDelegate {
 

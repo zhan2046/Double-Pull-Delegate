@@ -5,9 +5,7 @@ import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 import zhan.library.delegate.ScrollHeaderDelegate;
 
-/**
- * Created by hrz on 2016/7/8.
- */
+
 public class HeaderRelativeLayout extends RelativeLayout {
 
     private ScrollHeaderDelegate mScrollHeaderDelegate;

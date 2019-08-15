@@ -5,9 +5,7 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import zhan.library.delegate.ScrollHeaderDelegate;
 
-/**
- * Created by hrz on 2016/7/8.
- */
+
 public class HeaderFrameLayout extends FrameLayout {
 
     private ScrollHeaderDelegate mScrollHeaderDelegate;

@@ -2,9 +2,6 @@ package zhan.library.listener;
 
 import zhan.library.ScrollState;
 
-/**
- * Created by zhan on 2017/2/4.
- */
 
 public interface OnStateChangeListener {
 

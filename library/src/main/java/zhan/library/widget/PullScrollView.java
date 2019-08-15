@@ -8,9 +8,6 @@ import zhan.library.ScrollState;
 import zhan.library.delegate.ScrollViewDelegate;
 import zhan.library.listener.OnScrollChangedListener;
 
-/**
- * Created by hrz on 2016/7/8.
- */
 public class PullScrollView extends ScrollView {
 
   private ScrollViewDelegate mScrollViewDelegate;

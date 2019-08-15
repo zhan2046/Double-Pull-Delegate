@@ -2,9 +2,7 @@ package zhan.library.delegate;
 
 import android.view.View;
 
-/**
- * Created by zhan on 2017/2/4.
- */
+
 
 public class ScrollHeaderDelegate extends ScrollerDelegate {
 

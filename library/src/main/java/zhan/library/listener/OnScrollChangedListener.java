@@ -1,8 +1,5 @@
 package zhan.library.listener;
 
-/**
- * Created by zhan on 2017/2/4.
- */
 
 import android.view.View;
 

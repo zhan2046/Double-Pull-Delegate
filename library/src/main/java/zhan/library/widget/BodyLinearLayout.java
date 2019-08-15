@@ -8,9 +8,7 @@ import zhan.library.ScrollState;
 import zhan.library.delegate.ScrollBodyDelegate;
 import zhan.library.listener.OnStateChangeListener;
 
-/**
- * Created by hrz on 2016/7/8.
- */
+
 public class BodyLinearLayout extends LinearLayout {
 
     private ScrollBodyDelegate mScrollBodyDelegate;
