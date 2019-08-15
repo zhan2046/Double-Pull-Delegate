@@ -1,6 +1,6 @@
-package zhan.library.listener;
+package zhan.pull.listener;
 
-import zhan.library.ScrollState;
+import zhan.pull.ScrollState;
 
 
 public interface OnStateChangeListener {

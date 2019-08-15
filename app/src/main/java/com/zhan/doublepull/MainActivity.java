@@ -2,22 +2,25 @@ package com.zhan.doublepull;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.zhan.doublepull.adapter.ScrollAdapter;
-import zhan.library.ScrollState;
-import zhan.library.listener.OnScrollChangedListener;
-import zhan.library.listener.OnStateChangeListener;
-import zhan.library.widget.BodyRelativeLayout;
-import zhan.library.widget.HeaderRelativeLayout;
-import zhan.library.widget.PullScrollView;
+import zhan.pull.ScrollState;
+import zhan.pull.listener.OnScrollChangedListener;
+import zhan.pull.listener.OnStateChangeListener;
+import zhan.pull.widget.BodyRelativeLayout;
+import zhan.pull.widget.HeaderRelativeLayout;
+import zhan.pull.widget.PullScrollView;
 
 public class MainActivity extends AppCompatActivity
     implements OnStateChangeListener, View.OnClickListener, OnScrollChangedListener {
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity
     mOpenIv.setOnClickListener(this);
 
     mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-      @Override public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+      @Override public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
         if (mBodyRelativeLayout.getState() == ScrollState.HIDE) {
           mPullScrollView.scrollBy(dx, dy);
@@ -111,15 +114,15 @@ public class MainActivity extends AppCompatActivity
   }
 
   private void initView() {
-    mIconIv = (ImageView) findViewById(R.id.main_haibao);
-    mMaskIv = (ImageView) findViewById(R.id.main_header_mask);
-    mOpenIv = (ImageButton) findViewById(R.id.main_open_iv);
-    mRecyclerView = (RecyclerView) findViewById(R.id.main_rcv);
+    mIconIv = findViewById(R.id.main_haibao);
+    mMaskIv = findViewById(R.id.main_header_mask);
+    mOpenIv = findViewById(R.id.main_open_iv);
+    mRecyclerView = findViewById(R.id.main_rcv);
     mContentView = findViewById(R.id.main_content);
-    mPullScrollView = (PullScrollView) findViewById(R.id.main_root);
-    mHeaderRelativeLayout = (HeaderRelativeLayout) findViewById(R.id.main_header);
-    mBodyRelativeLayout = (BodyRelativeLayout) findViewById(R.id.main_body);
-    mLinearLayoutInfo = (LinearLayout) findViewById(R.id.main_info);
+    mPullScrollView = findViewById(R.id.main_root);
+    mHeaderRelativeLayout = findViewById(R.id.main_header);
+    mBodyRelativeLayout = findViewById(R.id.main_body);
+    mLinearLayoutInfo = findViewById(R.id.main_info);
   }
 
   @Override public void pullViewShow(ScrollState state) {
@@ -153,10 +156,8 @@ public class MainActivity extends AppCompatActivity
   }
 
   @Override public void onClick(View v) {
-    switch (v.getId()) {
-      case R.id.main_open_iv:
-        openOutUi();
-        break;
+    if (v.getId() == R.id.main_open_iv) {
+      openOutUi();
     }
   }
 

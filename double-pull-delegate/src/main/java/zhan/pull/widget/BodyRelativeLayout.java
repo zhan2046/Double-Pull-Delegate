@@ -1,29 +1,29 @@
-package zhan.library.widget;
+package zhan.pull.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.LinearLayout;
-import zhan.library.ScrollState;
-import zhan.library.delegate.ScrollBodyDelegate;
-import zhan.library.listener.OnStateChangeListener;
+import android.widget.RelativeLayout;
+import zhan.pull.ScrollState;
+import zhan.pull.delegate.ScrollBodyDelegate;
+import zhan.pull.listener.OnStateChangeListener;
 
 
-public class BodyLinearLayout extends LinearLayout {
+public class BodyRelativeLayout extends RelativeLayout {
 
     private ScrollBodyDelegate mScrollBodyDelegate;
 
-    public BodyLinearLayout(Context context) {
+    public BodyRelativeLayout(Context context) {
         super(context);
         init();
     }
 
-    public BodyLinearLayout(Context context, AttributeSet attrs) {
+    public BodyRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public BodyLinearLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BodyRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

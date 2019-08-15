@@ -30,5 +30,5 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
     implementation "androidx.appcompat:appcompat:${versions.supportLibrary}"
     implementation "com.google.android.material:material:${versions.supportLibrary}"
-    implementation project(':library')
+    implementation project(':double-pull-delegate')
 }

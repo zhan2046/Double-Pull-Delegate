@@ -1,26 +1,26 @@
-package zhan.library.widget;
+package zhan.pull.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.FrameLayout;
-import zhan.library.delegate.ScrollHeaderDelegate;
+import android.widget.RelativeLayout;
+import zhan.pull.delegate.ScrollHeaderDelegate;
 
 
-public class HeaderFrameLayout extends FrameLayout {
+public class HeaderRelativeLayout extends RelativeLayout {
 
     private ScrollHeaderDelegate mScrollHeaderDelegate;
 
-    public HeaderFrameLayout(Context context) {
+    public HeaderRelativeLayout(Context context) {
         super(context);
         init();
     }
 
-    public HeaderFrameLayout(Context context, AttributeSet attrs) {
+    public HeaderRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public HeaderFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public HeaderRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

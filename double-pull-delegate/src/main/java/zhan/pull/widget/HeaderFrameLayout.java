@@ -1,26 +1,26 @@
-package zhan.library.widget;
+package zhan.pull.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.LinearLayout;
-import zhan.library.delegate.ScrollHeaderDelegate;
+import android.widget.FrameLayout;
+import zhan.pull.delegate.ScrollHeaderDelegate;
 
 
-public class HeaderLinearLayout extends LinearLayout {
+public class HeaderFrameLayout extends FrameLayout {
 
     private ScrollHeaderDelegate mScrollHeaderDelegate;
 
-    public HeaderLinearLayout(Context context) {
+    public HeaderFrameLayout(Context context) {
         super(context);
         init();
     }
 
-    public HeaderLinearLayout(Context context, AttributeSet attrs) {
+    public HeaderFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public HeaderLinearLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public HeaderFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -33,6 +33,7 @@ public class HeaderLinearLayout extends LinearLayout {
     public void computeScroll() {
         mScrollHeaderDelegate.computeScroll();
     }
+
 
     public void setScrollShow(boolean isScrollShow) {
         mScrollHeaderDelegate.setScrollShow(isScrollShow);
