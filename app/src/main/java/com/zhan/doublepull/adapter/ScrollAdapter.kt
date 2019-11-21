@@ -11,10 +11,11 @@ class ScrollAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == TYPE_HEADER) {
-            HeaderViewHolder(
-                    LayoutInflater.from(parent.context).inflate(R.layout.header, parent, false))
-        } else ScrollViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false))
+            HeaderViewHolder(LayoutInflater.from(parent.context)
+                    .inflate(R.layout.header, parent, false))
+
+        } else ScrollViewHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.item, parent, false))
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -24,11 +25,11 @@ class ScrollAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
+        // do nothing
     }
 
     override fun getItemCount(): Int {
-        return 31
+        return DEFAULT_SIZE
     }
 
     private inner class ScrollViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -39,5 +40,7 @@ class ScrollAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         private const val TYPE_NORMAL = 1000
         private const val TYPE_HEADER = 2000
+
+        private const val DEFAULT_SIZE = 31
     }
 }

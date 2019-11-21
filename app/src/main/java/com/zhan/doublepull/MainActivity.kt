@@ -51,8 +51,7 @@ class MainActivity : AppCompatActivity(), OnStateChangeListener,
                 }
             }
         })
-        main_body.viewTreeObserver
-                .addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+        main_body.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
                     override fun onGlobalLayout() {
                         mHeaderHeight = main_header.measuredHeight
                         val iconHeight = main_haibao.measuredHeight
