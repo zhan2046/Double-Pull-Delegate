@@ -40,47 +40,6 @@ Add the dependency:
 	}
 ```
 
-
-Usage
-------
-
-```xml
-
-	<zhan.library.widget.PullScrollView 
-		xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:id="@+id/main_root"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent">
-	
-	    <RelativeLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content">
-	
-	        <zhan.library.widget.HeaderRelativeLayout
-	            android:id="@+id/main_header"
-	            android:layout_width="match_parent"
-	            android:layout_height="275dp">
-	
-			...
-
-			</zhan.library.widget.HeaderRelativeLayout>
-	
-
-	        <zhan.library.widget.BodyRelativeLayout
-	            android:id="@+id/main_body"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginTop="200dp">
-	
-			...
-	
-			 </zhan.library.widget.BodyRelativeLayout>
-	    </RelativeLayout>
-	</zhan.library.widget.PullScrollView>
-
-		
-```
-
 Delegate
 ------
 
@@ -103,60 +62,6 @@ Implementing View
 	<li><a href='javascript:'>BodyLinearLayout</a></li>
 	<li><a href='javascript:'>PullScrollView</a></li>
  </ul>
-
-Custom
-------
-
-```java
-
-	public class HeaderRelativeLayout extends RelativeLayout {
-	
-	    private ScrollHeaderDelegate mScrollHeaderDelegate;
-	
-	    public HeaderRelativeLayout(Context context) {
-	        super(context);
-	        init();
-	    }
-	
-	    public HeaderRelativeLayout(Context context, AttributeSet attrs) {
-	        super(context, attrs);
-	        init();
-	    }
-	
-	    public HeaderRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
-	        super(context, attrs, defStyleAttr);
-	        init();
-	    }
-	
-	    private void init() {
-	        mScrollHeaderDelegate = new ScrollHeaderDelegate(this);
-	    }
-	
-	    @Override
-	    public void computeScroll() {
-	        mScrollHeaderDelegate.computeScroll();
-	    }
-	
-	
-	    public void setScrollShow(boolean isScrollShow) {
-	        mScrollHeaderDelegate.setScrollShow(isScrollShow);
-	    }
-	
-	    public boolean isScrollShow() {
-	        return mScrollHeaderDelegate.isScrollShow();
-	    }
-	
-	    public void scrollShow() {
-	        mScrollHeaderDelegate.scrollShow();
-	    }
-	
-	    public void setDuration(int duration) {
-	        mScrollHeaderDelegate.setDuration(duration);
-	    }
-	}
-
-	...
-```
 
 
 Developed by
